@@ -4,12 +4,15 @@
 
 | 表单项 | 文件 | 状态 |
 | --- | --- | --- |
-| 01 项目源码 | 仓库根目录 | ✅ 已完成（8 次提交） |
+| 01 项目源码 | 仓库根目录 | ✅ 已完成（12 次提交） |
 | 02 插件安装截图 | 建议在 `chrome://extensions` 自行截一张 | ⬜ 需要你补一张 |
 | 03 与 AI 对话的截图（需求分析、方案） | —— | ⬜ 需要你在浏览器里截图（见下方说明） |
-| 04 将项目推送到云端的截图 | —— | ⬜ 需要 GitHub 令牌，见 `DEPLOY.md` |
-| 05 部署之后域名访问的网址截图 | `05-site-hero.png`（本地预览版） | 🟡 本地已截，部署后请替换成真实域名 |
+| 04 将项目推送到云端的截图 | `04-github-commits.png`、`04-github-repo.png` | ✅ 已完成 |
+| 05 部署之后域名访问的网址截图 | `05-domain-home.png`、`05-domain-full.png` | ✅ 已完成 |
 | 06 插件使用截图 | `06-plugin-button.png`、`06-gallery.png`、`06-plugin-scroll.png` | ✅ 已完成 |
+
+- 仓库：<https://github.com/Sc30289/imagegrab>
+- 站点：<https://sc30289.github.io/imagegrab/>
 
 ---
 
@@ -17,13 +20,17 @@
 
 | 文件 | 内容 |
 | --- | --- |
+| `04-github-commits.png` | GitHub 仓库的提交历史：12 次提交已推送到 `github.com/Sc30289/imagegrab` |
+| `04-github-repo.png` | GitHub 仓库首页：目录结构、About 简介、README / MIT 协议识别 |
+| `05-domain-home.png` | 部署后的站点首屏（`sc30289.github.io/imagegrab`） |
+| `05-domain-full.png` | 部署后的站点整页，页脚可见本站域名 |
 | `06-plugin-button.png` | 商品详情页右下角的「获取图片」悬浮按钮 |
 | `06-plugin-scroll.png` | 向下滚动后，懒加载的详情长图已铺开，按钮常驻右下角 |
 | `06-gallery.png` | 点击后打开的预览页：9 张图（含 1 张背景图），已选数量、勾选框、尺寸标注 |
-| `05-site-hero.png` | 官网首屏（1440×900） |
-| `05-site-full.png` | 官网整页长图 |
-| `05-site-features.png` | 核心功能区块 |
-| `05-site-install.png` | 安装步骤区块 |
+| `05-site-hero.png` | 官网首屏（本地预览，1440×900） |
+| `05-site-full.png` | 官网整页长图（本地预览） |
+| `05-site-features.png` | 核心功能区块（本地预览） |
+| `05-site-install.png` | 安装步骤区块（本地预览） |
 
 ### 这几张是怎么来的
 
