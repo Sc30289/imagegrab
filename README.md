@@ -4,6 +4,9 @@
 
 基于 **Manifest V3** 的 Chrome 浏览器扩展，纯本地运行，不上传任何数据。
 
+- 在线官网：<https://sc30289.github.io/imagegrab/>
+- 源码仓库：<https://github.com/Sc30289/imagegrab>
+
 ![插件预览](screenshots/06-plugin-button.png)
 
 ---
