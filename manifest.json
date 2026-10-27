@@ -4,7 +4,6 @@
   "version": "1.0.0",
   "description": "一键提取淘宝、天猫、京东、拼多多商家版商品详情页的所有图片，集中预览、自由勾选，批量下载为 PNG。",
   "minimum_chrome_version": "116",
-  "default_locale": "zh_CN",
 
   "permissions": [
     "activeTab",
