@@ -88,7 +88,27 @@ git subtree push --prefix docs origin gh-pages
 
 ---
 
-## 四、部署后自检清单
+## 四、关于「本地历史与远端历史」
+
+如果这个目录是在**没有直连 git 协议的网络**下初始化的（`git push` 被重置），远端历史是用
+GitHub 的 Git Data API 逐提交重建的：**文件内容、提交信息完全一致，但 commit SHA 不同**。
+
+拿到正常网络后，先对齐一次再继续开发：
+
+```bash
+git fetch origin
+git reset --hard origin/main    # 以远端为准；本地若有未推送的改动，先 commit 到别的分支
+```
+
+或者干脆重新 clone 一份：
+
+```bash
+git clone https://github.com/<你的用户名>/imagegrab.git
+```
+
+---
+
+## 五、部署后自检清单
 
 - [ ] 首页 Hero、功能卡片、安装步骤三个区块正常显示
 - [ ] 手机端（<768px）导航折叠成汉堡菜单，点击可展开
