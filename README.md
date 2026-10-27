@@ -80,7 +80,9 @@ python -m http.server 8765
   `srcset` 取其中最大的一张；背景图除内联样式外，还会解析 `document.styleSheets` 里的规则。
 - **原图归一**：淘宝 CDN 的 `_430x430q90.jpg`、`.jpg_.webp`，京东的 `/s450x450_jfs/`、`/n5/` 等
   缩放写法统一还原为原图地址；归一化后的地址若 404，会自动回退原始地址。
-- **权限最小化**：仅申请 `activeTab / scripting / downloads / storage`，`host_permissions` 只放开三个平台域名。
+- **权限最小化**：仅申请 `activeTab / scripting / downloads / storage`。`host_permissions` 只放开三个平台的
+  详情页域名，外加图片实际所在的 CDN（`alicdn.com`、`360buyimg.com`、`pddpic.com` 等）——没有这些域名，
+  Service Worker 里的 `fetch` 会被 CORS 拦掉，转 PNG 那一步就没法做。
 
 ## 隐私
 

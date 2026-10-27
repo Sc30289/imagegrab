@@ -17,7 +17,13 @@
     "*://*.tmall.com/*",
     "*://*.jd.com/*",
     "*://*.pinduoduo.com/*",
-    "*://*.yangkeduo.com/*"
+    "*://*.yangkeduo.com/*",
+
+    "*://*.alicdn.com/*",
+    "*://*.taobaocdn.com/*",
+    "*://*.tbcdn.cn/*",
+    "*://*.360buyimg.com/*",
+    "*://*.pddpic.com/*"
   ],
 
   "background": {
