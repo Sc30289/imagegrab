@@ -1,0 +1,153 @@
+/* ==========================================================================
+   图提取 ImageGrab · 页面内注入样式
+   说明：本文件注入到宿主页面，所有类名统一以 igx- 前缀命名，
+        并把页面可能继承的属性全部重置，避免被电商站点的全局样式污染。
+   ========================================================================== */
+
+#igx-fab,
+#igx-toast {
+  /* 重置：防止被宿主页面的通配符样式带偏 */
+  all: initial;
+  box-sizing: border-box;
+  font-family: -apple-system, BlinkMacSystemFont, "PingFang SC", "Microsoft YaHei", "Helvetica Neue", Arial, sans-serif;
+  -webkit-font-smoothing: antialiased;
+}
+
+#igx-fab *,
+#igx-toast * {
+  box-sizing: border-box;
+  font-family: inherit;
+}
+
+/* ---------- 悬浮按钮 ---------- */
+#igx-fab {
+  position: fixed;
+  right: 24px;
+  bottom: 88px;
+  z-index: 2147483000;
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  height: 48px;
+  padding: 0 20px 0 16px;
+  border: 0;
+  border-radius: 999px;
+  background: linear-gradient(135deg, #5b6cf9 0%, #8b5cf6 100%);
+  box-shadow: 0 8px 24px rgba(91, 108, 249, 0.38), 0 2px 6px rgba(17, 24, 39, 0.12);
+  color: #fff;
+  font-size: 15px;
+  font-weight: 600;
+  letter-spacing: .2px;
+  line-height: 1;
+  cursor: pointer;
+  user-select: none;
+  transition: transform .22s cubic-bezier(.4, 0, .2, 1), box-shadow .22s ease, filter .22s ease;
+}
+
+#igx-fab:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 12px 28px rgba(91, 108, 249, 0.46), 0 4px 10px rgba(17, 24, 39, 0.16);
+  filter: saturate(1.06);
+}
+
+#igx-fab:active {
+  transform: translateY(0) scale(.97);
+  box-shadow: 0 6px 16px rgba(91, 108, 249, 0.36);
+}
+
+#igx-fab:focus-visible {
+  outline: 3px solid rgba(91, 108, 249, .45);
+  outline-offset: 3px;
+}
+
+#igx-fab.is-busy {
+  cursor: progress;
+  pointer-events: none;
+  opacity: .92;
+}
+
+#igx-fab__icon {
+  display: inline-flex;
+  width: 20px;
+  height: 20px;
+  flex: none;
+}
+
+#igx-fab__icon svg {
+  width: 100%;
+  height: 100%;
+  display: block;
+}
+
+/* 忙碌状态下图标位换成一个旋转的小圈 */
+#igx-fab.is-busy #igx-fab__icon svg {
+  animation: igx-spin 900ms linear infinite;
+}
+
+@keyframes igx-spin {
+  to { transform: rotate(360deg); }
+}
+
+#igx-fab__label {
+  white-space: nowrap;
+}
+
+/* ---------- 轻提示 ---------- */
+#igx-toast {
+  position: fixed;
+  right: 24px;
+  bottom: 152px;
+  z-index: 2147483001;
+  max-width: 320px;
+  padding: 12px 16px;
+  border-radius: 12px;
+  background: rgba(17, 24, 39, .92);
+  color: #fff;
+  font-size: 13.5px;
+  line-height: 1.5;
+  box-shadow: 0 10px 30px rgba(17, 24, 39, .28);
+  backdrop-filter: blur(6px);
+  opacity: 0;
+  transform: translateY(8px);
+  pointer-events: none;
+  transition: opacity .24s ease, transform .24s ease;
+}
+
+#igx-toast.is-show {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+#igx-toast.is-error {
+  background: rgba(190, 18, 60, .94);
+}
+
+/* ---------- 高 DPI / 移动端微调 ---------- */
+@media (max-width: 640px) {
+  #igx-fab {
+    right: 16px;
+    bottom: 76px;
+    height: 44px;
+    padding: 0 16px 0 13px;
+    font-size: 14px;
+  }
+
+  #igx-toast {
+    right: 16px;
+    bottom: 132px;
+    left: 16px;
+    max-width: none;
+  }
+}
+
+/* 尊重系统的“减少动效”设置 */
+@media (prefers-reduced-motion: reduce) {
+  #igx-fab,
+  #igx-toast {
+    transition: none;
+  }
+
+  #igx-fab.is-busy #igx-fab__icon svg {
+    animation: none;
+  }
+}
